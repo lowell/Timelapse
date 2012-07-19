@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		361840C615B850BF00A4BFCE /* TTLAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361840C515B850BF00A4BFCE /* TTLAppController.m */; };
+		361840CA15B8595A00A4BFCE /* TTLCaptureOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 361840C915B8595A00A4BFCE /* TTLCaptureOperation.m */; };
+		36E7DE8015B828F1006605FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36E7DE7E15B828F1006605FA /* InfoPlist.strings */; };
+		36E7DE8215B828F1006605FA /* TimeLapse.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E7DE8115B828F1006605FA /* TimeLapse.m */; };
+		36E7DE8615B828F1006605FA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 36E7DE8415B828F1006605FA /* Credits.rtf */; };
+		36E7DE8F15B828F1006605FA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E7DE8D15B828F1006605FA /* MainMenu.xib */; };
+		36E7DE9515B8291D006605FA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE7815B828F1006605FA /* AppKit.framework */; };
+		36E7DE9615B82926006605FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE7A15B828F1006605FA /* Foundation.framework */; };
+		36E7DE9A15B82933006605FA /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9715B82933006605FA /* QTKit.framework */; };
+		36E7DE9B15B82933006605FA /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9815B82933006605FA /* Quartz.framework */; };
+		36E7DE9C15B82933006605FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9915B82933006605FA /* QuartzCore.framework */; };
+		36E7DE9E15B82939006605FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9D15B82939006605FA /* AVFoundation.framework */; };
+		36E7DEA015B8293E006605FA /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9F15B8293E006605FA /* ApplicationServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		361840C415B850BF00A4BFCE /* TTLAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLAppController.h; sourceTree = "<group>"; };
+		361840C515B850BF00A4BFCE /* TTLAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLAppController.m; sourceTree = "<group>"; };
+		361840C815B8595A00A4BFCE /* TTLCaptureOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLCaptureOperation.h; sourceTree = "<group>"; };
+		361840C915B8595A00A4BFCE /* TTLCaptureOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLCaptureOperation.m; sourceTree = "<group>"; };
+		36E7DE7115B828F1006605FA /* TimeLapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36E7DE7815B828F1006605FA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		36E7DE7A15B828F1006605FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36E7DE7D15B828F1006605FA /* TimeLapse-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeLapse-Info.plist"; sourceTree = "<group>"; };
+		36E7DE7F15B828F1006605FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36E7DE8115B828F1006605FA /* TimeLapse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeLapse.m; sourceTree = "<group>"; };
+		36E7DE8315B828F1006605FA /* TimeLapse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeLapse-Prefix.pch"; sourceTree = "<group>"; };
+		36E7DE8515B828F1006605FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		36E7DE8E15B828F1006605FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		36E7DE9715B82933006605FA /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		36E7DE9815B82933006605FA /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		36E7DE9915B82933006605FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		36E7DE9D15B82939006605FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		36E7DE9F15B8293E006605FA /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36E7DE6E15B828F1006605FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E7DEA015B8293E006605FA /* ApplicationServices.framework in Frameworks */,
+				36E7DE9E15B82939006605FA /* AVFoundation.framework in Frameworks */,
+				36E7DE9A15B82933006605FA /* QTKit.framework in Frameworks */,
+				36E7DE9B15B82933006605FA /* Quartz.framework in Frameworks */,
+				36E7DE9C15B82933006605FA /* QuartzCore.framework in Frameworks */,
+				36E7DE9615B82926006605FA /* Foundation.framework in Frameworks */,
+				36E7DE9515B8291D006605FA /* AppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36E7DE6615B828F0006605FA = {
+			isa = PBXGroup;
+			children = (
+				36E7DE7B15B828F1006605FA /* TimeLapse */,
+				36E7DE7415B828F1006605FA /* Frameworks */,
+				36E7DE7215B828F1006605FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36E7DE7215B828F1006605FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36E7DE7115B828F1006605FA /* TimeLapse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36E7DE7415B828F1006605FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36E7DE7815B828F1006605FA /* AppKit.framework */,
+				36E7DE9F15B8293E006605FA /* ApplicationServices.framework */,
+				36E7DE7A15B828F1006605FA /* Foundation.framework */,
+				36E7DE9D15B82939006605FA /* AVFoundation.framework */,
+				36E7DE9715B82933006605FA /* QTKit.framework */,
+				36E7DE9815B82933006605FA /* Quartz.framework */,
+				36E7DE9915B82933006605FA /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36E7DE7B15B828F1006605FA /* TimeLapse */ = {
+			isa = PBXGroup;
+			children = (
+				361840C415B850BF00A4BFCE /* TTLAppController.h */,
+				361840C515B850BF00A4BFCE /* TTLAppController.m */,
+				361840C815B8595A00A4BFCE /* TTLCaptureOperation.h */,
+				361840C915B8595A00A4BFCE /* TTLCaptureOperation.m */,
+				36E7DE7C15B828F1006605FA /* Supporting Files */,
+			);
+			path = TimeLapse;
+			sourceTree = "<group>";
+		};
+		36E7DE7C15B828F1006605FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36E7DE8D15B828F1006605FA /* MainMenu.xib */,
+				36E7DE7D15B828F1006605FA /* TimeLapse-Info.plist */,
+				36E7DE7E15B828F1006605FA /* InfoPlist.strings */,
+				36E7DE8115B828F1006605FA /* TimeLapse.m */,
+				36E7DE8315B828F1006605FA /* TimeLapse-Prefix.pch */,
+				36E7DE8415B828F1006605FA /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36E7DE7015B828F1006605FA /* TimeLapse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36E7DE9215B828F1006605FA /* Build configuration list for PBXNativeTarget "TimeLapse" */;
+			buildPhases = (
+				36E7DE6D15B828F1006605FA /* Sources */,
+				36E7DE6E15B828F1006605FA /* Frameworks */,
+				36E7DE6F15B828F1006605FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeLapse;
+			productName = TimeLapse;
+			productReference = 36E7DE7115B828F1006605FA /* TimeLapse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36E7DE6815B828F0006605FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TTL;
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = 36E7DE6B15B828F0006605FA /* Build configuration list for PBXProject "TimeLapse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 36E7DE6615B828F0006605FA;
+			productRefGroup = 36E7DE7215B828F1006605FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36E7DE7015B828F1006605FA /* TimeLapse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36E7DE6F15B828F1006605FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E7DE8015B828F1006605FA /* InfoPlist.strings in Resources */,
+				36E7DE8615B828F1006605FA /* Credits.rtf in Resources */,
+				36E7DE8F15B828F1006605FA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36E7DE6D15B828F1006605FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E7DE8215B828F1006605FA /* TimeLapse.m in Sources */,
+				361840C615B850BF00A4BFCE /* TTLAppController.m in Sources */,
+				361840CA15B8595A00A4BFCE /* TTLCaptureOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		36E7DE7E15B828F1006605FA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36E7DE7F15B828F1006605FA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		36E7DE8415B828F1006605FA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36E7DE8515B828F1006605FA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		36E7DE8D15B828F1006605FA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36E7DE8E15B828F1006605FA /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36E7DE9015B828F1006605FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		36E7DE9115B828F1006605FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		36E7DE9315B828F1006605FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimeLapse/TimeLapse-Prefix.pch";
+				INFOPLIST_FILE = "TimeLapse/TimeLapse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36E7DE9415B828F1006605FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimeLapse/TimeLapse-Prefix.pch";
+				INFOPLIST_FILE = "TimeLapse/TimeLapse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36E7DE6B15B828F0006605FA /* Build configuration list for PBXProject "TimeLapse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36E7DE9015B828F1006605FA /* Debug */,
+				36E7DE9115B828F1006605FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36E7DE9215B828F1006605FA /* Build configuration list for PBXNativeTarget "TimeLapse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36E7DE9315B828F1006605FA /* Debug */,
+				36E7DE9415B828F1006605FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36E7DE6815B828F0006605FA /* Project object */;
+}
