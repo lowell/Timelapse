@@ -13,6 +13,7 @@
 @interface TTLAppController () <NSAnimationDelegate> {
 
     NSURL *outputFolder;
+    Class CaptureOperation;
 
 }
 
@@ -46,9 +47,37 @@
     [self setImagePlaybackDuration:2.0];
     [self setIsCapturing:NO];
     [super awakeFromNib];
+<<<<<<< Updated upstream
     
-    objc_duplicateClass([NSObject class], "")
     return;
+=======
+    /*
+    self->CaptureOperation = objc_allocateClassPair([NSOperation class], "CaptureOperation", 0);
+    objc_registerClassPair(CaptureOperation);
+
+    objc_property_attribute_t type = { "T", "@\"id\"" };
+    objc_property_attribute_t ownership = { "W", "" };
+    objc_property_attribute_t backingivar  = { "V", "_delegate" };
+    objc_property_attribute_t attrs[] = { type, ownership, backingivar };
+    class_addProperty(CaptureOperation, "delegate", attrs, 3);
+
+    Protocol *captureOperationDelegate = objc_allocateProtocol("TTLCaptureOperationDelegate");
+//    objc_registerProtocol(captureOperationDelegate);
+    class_addProtocol(CaptureOperation, captureOperationDelegate);
+
+    protocol_addMethodDescription(captureOperationDelegate, @selector(operation:didFinishCapture:), "@:@@", YES, YES);
+
+    id (^main)(id, SEL) = ^id (id __self, SEL ___cmd){
+        CGImageRef captureImage = CGDisplayCreateImage(CGMainDisplayID());
+        if ([__self delegate])
+            [[__self delegate] operation:__self didFinishCapture:captureImage];
+        
+        CFRelease(captureImage);
+        return __self;
+    };
+    class_addMethod(CaptureOperation, @selector(main), imp_implementationWithBlock(main), "@@:");
+    */
+>>>>>>> Stashed changes
 
 }
 
@@ -133,6 +162,7 @@
 
 - (void) ttl_addCaptureOperation {
 
+//    id op = [[self->CaptureOperation alloc] init];
     TTLCaptureOperation *op = [[TTLCaptureOperation alloc] init];
     [op setDelegate:self];
     [[NSOperationQueue mainQueue] addOperation:op];
