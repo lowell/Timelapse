@@ -8,6 +8,6 @@
 
 #import <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
-
-@interface TTLAppController : NSObject <NSApplicationDelegate>
+#import "TTLCaptureOperation.h"
+@interface TTLAppController : NSObject <NSApplicationDelegate, TTLCaptureOperationDelegate>
 @end

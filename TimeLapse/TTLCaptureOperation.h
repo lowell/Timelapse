@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol TTLCaptureOperationDelegate;
+
 @interface TTLCaptureOperation : NSOperation
-@property (copy) NSURL *outputFolder;
+
+@property (assign) __weak id<TTLCaptureOperationDelegate> delegate;
+
+@end
+
+@protocol TTLCaptureOperationDelegate <NSObject>
+- (void) operation: (TTLCaptureOperation *) operation didFinishCapture: (CGImageRef) image;
 @end

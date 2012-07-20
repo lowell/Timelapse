@@ -5,7 +5,8 @@
 //  Created by reddit.com/u/_lowell for http://redd.it/wshn4 on 7/19/12.
 //
 //
-
+#include <objc/runtime.h>
+#import <QTKit/QTKit.h>
 #import "TTLAppController.h"
 #import "TTLCaptureOperation.h"
 
@@ -17,13 +18,17 @@
 
 @property BOOL isCapturing;
 @property NSInteger captureInterval;
+@property NSTimeInterval imagePlaybackDuration;
+@property (retain) NSMutableArray *images;
 @property (retain) NSTimer *captureTimer;
 @property (assign) IBOutlet NSWindow *mainWindow;
 @property (assign) IBOutlet NSTextField *outputFolderLabel;
 @property (assign) IBOutlet NSButton *button;
+@property (assign) IBOutlet NSProgressIndicator *spinner;
 
 - (void) ttl_addCaptureOperation;
 - (void) ttl_updateOutputFolderLabel;
+- (void) ttl_buildMovie;
 
 @end
 
@@ -34,11 +39,15 @@
 
 - (void) awakeFromNib {
 
+    [self setImages:[NSMutableArray array]];
     [[self button] setEnabled:NO];
 
-    [self setCaptureInterval:5];
+    [self setCaptureInterval:1];
+    [self setImagePlaybackDuration:2.0];
     [self setIsCapturing:NO];
     [super awakeFromNib];
+    
+    objc_duplicateClass([NSObject class], "")
     return;
 
 }
@@ -47,23 +56,27 @@
 #pragma mark NSApplicationDelegate
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+
     return YES;
+
 }
 
 - (void) applicationWillFinishLaunching:(NSNotification *)notification {
 
+    [[self mainWindow] makeKeyAndOrderFront:self];
     [[self mainWindow] setAlphaValue:0.0];
 
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)notification {
 
-    NSAnimation *animation = [[NSAnimation alloc] initWithDuration:1.0
-                                                    animationCurve:NSAnimationLinear];
-    [[[self mainWindow] animator] setAnimations:@{ animation : @"alphaValue" }];
+    NSAnimation *animation = [[NSAnimation alloc] initWithDuration:0.5
+                                                    animationCurve:NSAnimationEaseInOut];
+    [(NSWindow *)[[self mainWindow] animator] setAnimations:@{ animation : @"alphaValue" }];
 
     [animation startAnimation];
     [[[self mainWindow] animator] setAlphaValue:1.0];
+    [animation release];
 
 }
 
@@ -95,7 +108,8 @@
 
     if (![self isCapturing]) {
 
-        [[self button] setTitle:@"Stop"];
+        [[self spinner] startAnimation:self];
+        [[self button] setTitle:@"Stop & Make Movie"];
         [self setIsCapturing:YES];
         [self setCaptureTimer:[NSTimer scheduledTimerWithTimeInterval:[self captureInterval]
                                                     target:self
@@ -106,9 +120,12 @@
 
     } else {
 
-        [[self button] setTitle:@"Start"];
+        [[self spinner] stopAnimation:self];
+        [[self button] setTitle:@"Take Screenshots"];
         [self setIsCapturing:NO];
         [[self captureTimer] invalidate];
+
+        [self ttl_buildMovie];
 
     }
 
@@ -117,22 +134,81 @@
 - (void) ttl_addCaptureOperation {
 
     TTLCaptureOperation *op = [[TTLCaptureOperation alloc] init];
-    [op setOutputFolder:self->outputFolder];
+    [op setDelegate:self];
     [[NSOperationQueue mainQueue] addOperation:op];
 
 }
+
+- (void) ttl_buildMovie {
+
+    NSBlockOperation *buildMovieOperation = [NSBlockOperation blockOperationWithBlock:^(void) {
+        
+        NSString *file = [NSString stringWithFormat:@"%@/%ld.m4v", [self->outputFolder relativePath], time(NULL)];
+
+        NSError *movieError = nil;
+        QTMovie *movie = [[QTMovie alloc] initToWritableFile:file error:&movieError];
+        [movie setAttribute:@YES
+                     forKey:QTMovieEditableAttribute];
+
+        if (!movie) {
+
+            NSLog(@"%@", movieError);
+
+        }
+
+        NSLog(@"%lx images in movie.", [[self images] count]);
+        for (NSImage *img in [self images]) {
+            [movie addImage:img
+                forDuration:QTMakeTimeWithTimeInterval([self imagePlaybackDuration])
+             withAttributes:@{ QTAddImageCodecType : @"mp4v", QTAddImageCodecQuality : @(codecHighQuality) }];
+            [movie updateMovieFile];
+        }
+        NSLog(@"Writing to file %@...", file);
+
+        if ([movie updateMovieFile]) {
+
+            NSLog(@"Wrote to file %@", file);
+
+        } else {
+            [NSApp presentError:[NSError errorWithDomain:@"com.github.user.lowell"
+                                                    code:-500
+                                                userInfo:@{ @"TTLFailureMessage" : @"Unable to write file."}]];
+        };
+        [movie release];
+    }];
+    [buildMovieOperation setCompletionBlock:^{
+
+        [NSApp performSelectorOnMainThread:@selector(requestUserAttention:)
+                                withObject:nil
+                             waitUntilDone:NO];
+
+    }];
+
+    [[NSOperationQueue mainQueue] addOperation:buildMovieOperation];
+    
+}
+
 - (void) ttl_updateOutputFolderLabel {
 
     if (self->outputFolder) {
 
         [[self outputFolderLabel] setStringValue:[NSString stringWithFormat:@"%@", [self->outputFolder relativePath]]];
 
-    } else {
-
-        [NSApp presentError:[NSError errorWithDomain:@""
-                                                code:-1
-                                            userInfo:@{ @"Error" : @"Invalid path selected." }]];
-
     }
+
 }
+
+#pragma mark -
+#pragma mark TTLAppControllerDelegate
+
+- (void) operation:(TTLCaptureOperation *)operation didFinishCapture:(CGImageRef)image {
+
+    NSImage *_image = [[NSImage alloc] initWithCGImage:image
+                                                  size:NSMakeSize(CGImageGetWidth(image),
+                                                                  CGImageGetHeight(image))];
+    [[self images] addObject:[_image autorelease]];
+    return;
+
+}
+
 @end

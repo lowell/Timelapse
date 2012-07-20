@@ -18,20 +18,11 @@
 
 - (void) main {
 
-    NSString *filename =
-        [NSString stringWithFormat:@"%@/%ld.png", [[self outputFolder] absoluteString], time(NULL)];
-    NSURL *fileURL = [NSURL URLWithString:filename];
-
     CGImageRef captureImage = CGDisplayCreateImage(CGMainDisplayID());
-    CGImageDestinationRef destination =
-        CGImageDestinationCreateWithURL((CFURLRef) fileURL,
-                                        kUTTypePNG,
-                                        1,
-                                        (CFDictionaryRef)@{ @"" : @"" });
-    CGImageDestinationAddImage(destination,
-                               captureImage,
-                               (CFDictionaryRef)@{ @"" : @"" });
-    CGImageDestinationFinalize(destination);
+    if ([self delegate])
+        [[self delegate] operation:self didFinishCapture:captureImage];
+
+    CFRelease(captureImage);
     return;
 
 }

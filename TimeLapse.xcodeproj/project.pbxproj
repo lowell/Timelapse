@@ -20,6 +20,7 @@
 		36E7DE9C15B82933006605FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9915B82933006605FA /* QuartzCore.framework */; };
 		36E7DE9E15B82939006605FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9D15B82939006605FA /* AVFoundation.framework */; };
 		36E7DEA015B8293E006605FA /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9F15B8293E006605FA /* ApplicationServices.framework */; };
+		36F2591515B8B0FA00B2C712 /* TTLMovieOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F2591415B8B0FA00B2C712 /* TTLMovieOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		36E7DE9915B82933006605FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		36E7DE9D15B82939006605FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		36E7DE9F15B8293E006605FA /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		36F2591315B8B0FA00B2C712 /* TTLMovieOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLMovieOperation.h; sourceTree = "<group>"; };
+		36F2591415B8B0FA00B2C712 /* TTLMovieOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLMovieOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 			children = (
 				361840C415B850BF00A4BFCE /* TTLAppController.h */,
 				361840C515B850BF00A4BFCE /* TTLAppController.m */,
+				36F2591315B8B0FA00B2C712 /* TTLMovieOperation.h */,
+				36F2591415B8B0FA00B2C712 /* TTLMovieOperation.m */,
 				361840C815B8595A00A4BFCE /* TTLCaptureOperation.h */,
 				361840C915B8595A00A4BFCE /* TTLCaptureOperation.m */,
 				36E7DE7C15B828F1006605FA /* Supporting Files */,
@@ -184,6 +189,7 @@
 				36E7DE8215B828F1006605FA /* TimeLapse.m in Sources */,
 				361840C615B850BF00A4BFCE /* TTLAppController.m in Sources */,
 				361840CA15B8595A00A4BFCE /* TTLCaptureOperation.m in Sources */,
+				36F2591515B8B0FA00B2C712 /* TTLMovieOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +244,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -259,7 +265,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				SDKROOT = macosx;
 			};
 			name = Release;
