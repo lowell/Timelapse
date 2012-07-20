@@ -47,7 +47,6 @@
     [self setIsCapturing:NO];
     [super awakeFromNib];
     
-    objc_duplicateClass([NSObject class], "")
     return;
 
 }
