@@ -16,9 +16,6 @@
 		36E7DE9515B8291D006605FA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE7815B828F1006605FA /* AppKit.framework */; };
 		36E7DE9615B82926006605FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE7A15B828F1006605FA /* Foundation.framework */; };
 		36E7DE9A15B82933006605FA /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9715B82933006605FA /* QTKit.framework */; };
-		36E7DE9B15B82933006605FA /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9815B82933006605FA /* Quartz.framework */; };
-		36E7DE9C15B82933006605FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9915B82933006605FA /* QuartzCore.framework */; };
-		36E7DE9E15B82939006605FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9D15B82939006605FA /* AVFoundation.framework */; };
 		36E7DEA015B8293E006605FA /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E7DE9F15B8293E006605FA /* ApplicationServices.framework */; };
 		36F2591515B8B0FA00B2C712 /* TTLMovieOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F2591415B8B0FA00B2C712 /* TTLMovieOperation.m */; };
 /* End PBXBuildFile section */
@@ -38,9 +35,6 @@
 		36E7DE8515B828F1006605FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		36E7DE8E15B828F1006605FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		36E7DE9715B82933006605FA /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
-		36E7DE9815B82933006605FA /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		36E7DE9915B82933006605FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		36E7DE9D15B82939006605FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		36E7DE9F15B8293E006605FA /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		36F2591315B8B0FA00B2C712 /* TTLMovieOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLMovieOperation.h; sourceTree = "<group>"; };
 		36F2591415B8B0FA00B2C712 /* TTLMovieOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLMovieOperation.m; sourceTree = "<group>"; };
@@ -52,10 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36E7DEA015B8293E006605FA /* ApplicationServices.framework in Frameworks */,
-				36E7DE9E15B82939006605FA /* AVFoundation.framework in Frameworks */,
 				36E7DE9A15B82933006605FA /* QTKit.framework in Frameworks */,
-				36E7DE9B15B82933006605FA /* Quartz.framework in Frameworks */,
-				36E7DE9C15B82933006605FA /* QuartzCore.framework in Frameworks */,
 				36E7DE9615B82926006605FA /* Foundation.framework in Frameworks */,
 				36E7DE9515B8291D006605FA /* AppKit.framework in Frameworks */,
 			);
@@ -87,10 +78,7 @@
 				36E7DE7815B828F1006605FA /* AppKit.framework */,
 				36E7DE9F15B8293E006605FA /* ApplicationServices.framework */,
 				36E7DE7A15B828F1006605FA /* Foundation.framework */,
-				36E7DE9D15B82939006605FA /* AVFoundation.framework */,
 				36E7DE9715B82933006605FA /* QTKit.framework */,
-				36E7DE9815B82933006605FA /* Quartz.framework */,
-				36E7DE9915B82933006605FA /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

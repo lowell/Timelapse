@@ -5,8 +5,9 @@
 //  Created by reddit.com/u/_lowell for http://redd.it/wshn4 on 7/19/12.
 //
 //
-#include <objc/runtime.h>
+
 #import <QTKit/QTKit.h>
+
 #import "TTLAppController.h"
 #import "TTLCaptureOperation.h"
 
@@ -26,6 +27,7 @@
 @property (assign) IBOutlet NSTextField *outputFolderLabel;
 @property (assign) IBOutlet NSButton *button;
 @property (assign) IBOutlet NSProgressIndicator *spinner;
+@property (assign) IBOutlet NSTextField *status;
 
 - (void) ttl_addCaptureOperation;
 - (void) ttl_updateOutputFolderLabel;
@@ -182,18 +184,19 @@
             NSLog(@"%@", movieError);
 
         }
-
-        NSLog(@"%lx images in movie.", [[self images] count]);
+        [[self status] setHidden:NO];
+        [[self status] setStringValue:[NSString stringWithFormat:@"%ld images in movie.", [[self images] count]]];
         for (NSImage *img in [self images]) {
             [movie addImage:img
                 forDuration:QTMakeTimeWithTimeInterval([self imagePlaybackDuration])
              withAttributes:@{ QTAddImageCodecType : @"mp4v", QTAddImageCodecQuality : @(codecHighQuality) }];
             [movie updateMovieFile];
         }
+        [[self status] setStringValue:[NSString stringWithFormat:@"Writing to file..."]];
         NSLog(@"Writing to file %@...", file);
 
         if ([movie updateMovieFile]) {
-
+            [[self status] setStringValue:[NSString stringWithFormat:@"Wrote to file %@", file]];
             NSLog(@"Wrote to file %@", file);
 
         } else {

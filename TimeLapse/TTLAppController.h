@@ -9,5 +9,6 @@
 #import <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
 #import "TTLCaptureOperation.h"
+
 @interface TTLAppController : NSObject <NSApplicationDelegate, TTLCaptureOperationDelegate>
 @end
