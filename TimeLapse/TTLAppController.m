@@ -47,10 +47,8 @@
     [self setImagePlaybackDuration:2.0];
     [self setIsCapturing:NO];
     [super awakeFromNib];
-<<<<<<< Updated upstream
     
     return;
-=======
     /*
     self->CaptureOperation = objc_allocateClassPair([NSOperation class], "CaptureOperation", 0);
     objc_registerClassPair(CaptureOperation);
